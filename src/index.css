@@ -1,0 +1,101 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    font-family: 'Teko', sans-serif;
+    overflow: hidden;
+}
+
+#headerContainer {
+    width: 100%;
+    height: 3.5em;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    top: -2.6em;
+    transition: all .5s ease;
+}
+
+#headerContainer:hover {
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+}
+
+header {
+    margin: 0 auto;
+    width: 50vw;
+    height: 100%;
+    color: white;
+    font-size: 2em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .headerLink {
+    transition: text-shadow .5s ease;
+}
+
+header .headerLink:hover {
+    cursor:pointer;
+    text-shadow: gray 2px 2px 3px;
+}
+
+#content {
+    width: 100%;
+}
+
+.fullscreenPage {
+    width: 100%;
+    height: 100vh;
+}
+
+#page0 {
+    color: antiquewhite;
+    background: #0A2463;
+}
+
+#page1 {
+    color: antiquewhite;
+    background: #605F5E;
+}
+
+#page2 {
+    color: antiquewhite;
+    background: #FB3640;
+}
+
+#page3 {
+    background: #E2E2E2;
+}
+
+.fullscreenTextPage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: .2vmin;
+    cursor: default;
+}
+
+.fullscreenText {
+    text-align: center;
+    font-size: 20vmin;
+    font-weight: bold;
+    text-shadow: rgba(0, 0, 0, 0.8) .5vmin .5vmin .6vmin;
+}
+
+.fadeInText {
+    right: 10rem;
+    opacity:0;
+    transition: all 1s cubic-bezier(.18,.89,.32,1.28);
+    position: relative;
+}
+
+.active .fadeInText{
+    right:0;
+    opacity: 1;
+}
