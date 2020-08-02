@@ -1,5 +1,7 @@
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
@@ -8,6 +10,25 @@ body {
     width: 100%;
     font-family: 'Teko', sans-serif;
     overflow: hidden;
+}
+
+a {
+    color: #57994c;
+    text-decoration: none;
+    transition: text-shadow .5s ease;
+}
+
+a:hover {
+    text-shadow: rgba(0, 0, 0, 0.4) .2rem .2rem .3rem;
+    cursor: pointer;
+}
+
+a:active {
+    color: #54b641;
+}
+
+p {
+    font-size: 2rem;
 }
 
 #headerContainer {
@@ -41,7 +62,7 @@ header .headerLink {
 }
 
 header .headerLink:hover {
-    cursor:pointer;
+    cursor: pointer;
     text-shadow: gray 2px 2px 3px;
 }
 
@@ -66,19 +87,26 @@ header .headerLink:hover {
 
 #page2 {
     color: antiquewhite;
-    background: #FB3640;
+    background: #cb121b;
 }
 
 #page3 {
     background: #E2E2E2;
 }
 
-.fullscreenTextPage {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    letter-spacing: .2vmin;
-    cursor: default;
+#page4 {
+    background: #BFCC94;
+    color: #344966;
+}
+
+#page5 {
+    background: #FFF9A5;
+    color: #B48B7D;
+}
+
+#page6 {
+    background: #7FEFBD;
+    color: #CBA135;
 }
 
 .fullscreenText {
@@ -86,16 +114,86 @@ header .headerLink:hover {
     font-size: 20vmin;
     font-weight: bold;
     text-shadow: rgba(0, 0, 0, 0.8) .5vmin .5vmin .6vmin;
+    letter-spacing: .2vmin;
+    cursor: default;
 }
 
-.fadeInText {
-    right: 10rem;
-    opacity:0;
-    transition: all 1s cubic-bezier(.18,.89,.32,1.28);
-    position: relative;
+.bigHeading {
+    font-size: 10rem;
 }
 
-.active .fadeInText{
-    right:0;
-    opacity: 1;
+.bigParagraph {
+    font-size: 3rem;
+}
+
+.centeredContainer {
+    text-align: center;
+}
+
+.personPage img {
+    max-width: 50vmin;
+}
+
+.personPage p {
+    max-width: 25rem;
+    margin: 6rem;
+}
+
+.personPage .flexCenter {
+    justify-content: space-around;
+    margin: 0 5vw;
+}
+
+.flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fadeIn {
+    opacity: 0;
+}
+
+.active .fadeIn {
+    animation: fadeIn 1s cubic-bezier(.18, .89, .42, 1.0);
+    animation-fill-mode: forwards;
+}
+
+/*animations*/
+
+@keyframes fadeIn {
+    from {
+        right: 10rem;
+        opacity: 0;
+        position: relative;
+    }
+    to {
+        right: 0;
+        opacity: 1;
+        position: relative;
+    }
+}
+
+.rotate3D {
+    opacity: 0;
+}
+
+.active .rotate3D {
+    animation: rotateIn 2s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate3d(50, 30, 40, 770deg);
+        right: 50%;
+        position: relative;
+        opacity: 0;
+    }
+    to {
+        transform: rotate3d(0, 0, 0, 0deg);
+        opacity: 1;
+        right: 0;
+        position: relative;
+    }
 }

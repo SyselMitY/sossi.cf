@@ -5,10 +5,13 @@ let currentPage = 0;
 const pages = []
 
 function loaded() {
-    addPage("page0", "Hey");
-    addPage("page1", "Ho");
-    addPage("page2", "Minecraft");
-    addPage("page3", "Sossi");
+    addPage("page0", "Hey Ho");
+    addPage("page1", "Krasse Sachen");
+    addPage("page2", "Websites");
+    addPage("page3", "Persönlichkeiten");
+    addPage("page4", "Peppi Gradinger");
+    addPage("page5", "Jenklas Enk");
+    addPage("page6", "Tschau");
     initHeader();
 
     document.addEventListener("wheel", scrollHandler);
@@ -16,8 +19,14 @@ function loaded() {
 }
 
 function addPage(newId, newTitle) {
+    let newElem = document.getElementById(newId);
+    let links = document.getElementsByClassName(newId + "-link");
+    for (let link of links) {
+        console.log(link);
+        link.addEventListener("click", () => navigateToPage(newElem));
+    }
     pages.push({
-        elem: document.getElementById(newId),
+        elem: newElem,
         title: newTitle
     });
 
@@ -29,7 +38,7 @@ function initHeader() {
         let span = document.createElement("span");
         span.className = "headerLink";
         span.innerText = page.title;
-        span.addEventListener("click",()=>navigateToPage(page.elem))
+        span.addEventListener("click", () => navigateToPage(page.elem))
         header.appendChild(span);
     }
 }
@@ -66,6 +75,32 @@ function scrollPageEnd() {
     content.removeEventListener("transitionend", scrollPageEnd);
     content.style.transition = "";
     document.addEventListener("wheel", scrollHandler);
-    pages.forEach(page=>page.elem.classList.remove("active"));
+    pages.forEach(page => page.elem.classList.remove("active"));
     pages[currentPage].elem.classList.add("active")
 }
+
+//Touchscreen stuff
+let touchStartY = null;
+let deltaY = 0;
+
+function touchStart(event) {
+    touchStartY = event.touches[0].clientY;
+}
+
+function touchMove(event) {
+    let newY = event.touches[0].clientY;
+    deltaY = newY - touchStartY;
+}
+
+function touchEnd(event) {
+    if (deltaY < 200)
+        currentPage++;
+    else
+        currentPage--;
+    scrollPage();
+    deltaY = 0;
+}
+
+document.addEventListener("touchstart", touchStart);
+document.addEventListener("touchmove", touchMove);
+document.addEventListener("touchend", touchEnd);
