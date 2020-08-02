@@ -116,14 +116,15 @@ header .headerLink:hover {
     text-shadow: rgba(0, 0, 0, 0.8) .5vmin .5vmin .6vmin;
     letter-spacing: .2vmin;
     cursor: default;
+    word-wrap: anywhere;
 }
 
 .bigHeading {
-    font-size: 10rem;
+    font-size: 15vmin;
 }
 
 .bigParagraph {
-    font-size: 3rem;
+    font-size: 7vmin;
 }
 
 .centeredContainer {
@@ -137,6 +138,25 @@ header .headerLink:hover {
 .personPage p {
     max-width: 25rem;
     margin: 6rem;
+    font-size: 2rem;
+}
+
+@media screen and (max-width: 1000px) {
+    .flexCenter {
+        flex-wrap: wrap;
+    }
+    .personPage p {
+        max-width: 90vw;
+        margin: 1rem;
+        font-size: 1.5rem;
+    }
+    .personPage {
+        padding-top: 5vh;
+    }
+    header {
+        display: none;
+
+    }
 }
 
 .personPage .flexCenter {

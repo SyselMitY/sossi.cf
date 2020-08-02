@@ -92,8 +92,8 @@ function touchMove(event) {
     deltaY = newY - touchStartY;
 }
 
-function touchEnd(event) {
-    if (deltaY < 200)
+function touchEnd() {
+    if (deltaY < 200 && currentPage < pages.length - 1)
         currentPage++;
     else
         currentPage--;
