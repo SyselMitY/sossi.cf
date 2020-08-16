@@ -16,6 +16,18 @@ function loaded() {
 
     document.addEventListener("wheel", scrollHandler);
     pages[0].elem.classList.add("active");
+
+    window.scrollTo(0, 0);
+
+    let targetPage = window.location.hash.substring(1);
+    if (targetPage === undefined || targetPage.length === 0)
+        return;
+
+    let targetDiv = document.getElementById(targetPage);
+    if (targetDiv === undefined)
+        return;
+
+    navigateToPage(targetDiv);
 }
 
 function addPage(newId, newTitle) {
@@ -59,7 +71,6 @@ function scrollHandler(event) {
         currentPage--;
         scrollPage();
     }
-
 }
 
 function scrollPage() {
@@ -76,6 +87,7 @@ function scrollPageEnd() {
     content.style.transition = "";
     document.addEventListener("wheel", scrollHandler);
     pages.forEach(page => page.elem.classList.remove("active"));
+    console.log(currentPage);
     pages[currentPage].elem.classList.add("active")
 }
 
@@ -90,14 +102,17 @@ function touchStart(event) {
 function touchMove(event) {
     let newY = event.touches[0].clientY;
     deltaY = newY - touchStartY;
+    console.log(deltaY);
 }
 
 function touchEnd() {
-    if (deltaY < 200 && currentPage < pages.length - 1)
+    if (deltaY < -150 && currentPage < pages.length - 1) {
         currentPage++;
-    else
+        scrollPage();
+    } else if (deltaY > 150 && currentPage > 0) {
         currentPage--;
-    scrollPage();
+        scrollPage();
+    }
     deltaY = 0;
 }
 
