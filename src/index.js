@@ -11,7 +11,8 @@ function loaded() {
     addPage("page3", "Persönlichkeiten");
     addPage("page4", "Peppi Gradinger");
     addPage("page5", "Jenklas Enk");
-    addPage("page6", "Tschau");
+    addPage("page6", "Gorbi");
+    addPage("page7", "Tschau");
     initHeader();
 
     document.addEventListener("wheel", scrollHandler);

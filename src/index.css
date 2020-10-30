@@ -105,6 +105,11 @@ header .headerLink:hover {
 }
 
 #page6 {
+    background: #3DD6D0;
+    color: #513C2C;
+}
+
+#page7 {
     background: #97e8c2;
     color: #CBA135;
 }
