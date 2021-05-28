@@ -27,6 +27,7 @@
 }
 
 
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -139,6 +140,11 @@ header .headerLink:hover {
 }
 
 #page7 {
+    background: #f3ffc6;
+    color: #1c5253;
+}
+
+#page8 {
     background: #97e8c2;
     color: #CBA135;
 }
@@ -179,14 +185,17 @@ header .headerLink:hover {
     .flexCenter {
         flex-wrap: wrap;
     }
+
     .personPage p {
         max-width: 90vw;
         margin: 1rem;
         font-size: 1.5rem;
     }
+
     .personPage {
         padding-top: 5vh;
     }
+
     #headerContainer {
         display: none;
 
@@ -203,7 +212,6 @@ header .headerLink:hover {
     justify-content: center;
     align-items: center;
 }
-
 
 
 /*animations*/
@@ -314,7 +322,7 @@ header .headerLink:hover {
 }
 
 .active .flyUp {
-    animation: flyUp 1s cubic-bezier(.25,.46,.3,1);;
+    animation: flyUp 1s cubic-bezier(.25, .46, .3, 1);;
     opacity: 1;
 }
 

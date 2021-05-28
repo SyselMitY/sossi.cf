@@ -4,6 +4,8 @@ let currentPage = 0;
 
 const pages = []
 
+loaded();
+
 function loaded() {
     addPage("page0", "Hey Ho");
     addPage("page1", "Krasse Sachen");

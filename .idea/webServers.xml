@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="6ef40348-54e9-43d6-8d51-39b4d18cfdeb" name="Azure" url="">
+      <webServer id="6ef40348-54e9-43d6-8d51-39b4d18cfdeb" name="Azure" url="https://soisi.cf">
         <fileTransfer rootFolder="/home/sossi/web/sossi.cf/" accessType="SFTP" host="137.135.162.250" port="22" sshConfigId="b8313e62-9297-4ef2-93ca-1970c5f9705f" sshConfig="sossi@137.135.162.250:22 key" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

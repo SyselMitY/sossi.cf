@@ -2,7 +2,7 @@
 <project version="4">
   <component name="SshConfigs">
     <configs>
-      <sshConfig connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="137.135.162.250" id="b8313e62-9297-4ef2-93ca-1970c5f9705f" keyPath="X:\keys\test-server_key.ppk" port="22" nameFormat="DESCRIPTIVE" username="sossi" />
+      <sshConfig connectionConfig="{&quot;serverAliveInterval&quot;:300}" host="137.135.162.250" id="b8313e62-9297-4ef2-93ca-1970c5f9705f" keyPath="C:\Users\Peter Sysel\Downloads\test-server_key.ppk" port="22" nameFormat="DESCRIPTIVE" username="sossi" />
     </configs>
   </component>
 </project>
