@@ -12,7 +12,8 @@ function loaded() {
     addPage("page4", "Peppi Gradinger");
     addPage("page5", "Jenklas Enk");
     addPage("page6", "Gorbi");
-    addPage("page7", "Tschau");
+    addPage("page7", "Magdalena");
+    addPage("page8", "Tschau");
     initHeader();
 
     document.addEventListener("wheel", scrollHandler);
